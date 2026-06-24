@@ -24,6 +24,7 @@ public class ModCreativeTabs {
                     .displayItems((params, outputs) ->{
                         outputs.accept(ModItems.FROZEN_SHARD.get());
                         outputs.accept(ModBlocks.FROZEN_BLOCK.asItem());
+                        outputs.accept(ModBlocks.HEATER_BLOCK.asItem());
                     })
                     .build()
     );

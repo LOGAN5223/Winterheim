@@ -4,5 +4,8 @@
   "item.winterheim.frozen_block": "Frozen Block",
   "block.winterheim.frozen_block": "Frozen Block",
 
+  "item.winterheim.heater_block": "Heater Block",
+  "block.winterheim.heater_block": "Heater Block",
+
   "item.winterheim.frozen_shard": "Frozen Shard"
 }

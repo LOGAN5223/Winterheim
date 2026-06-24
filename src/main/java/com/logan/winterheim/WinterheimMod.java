@@ -1,8 +1,10 @@
 package com.logan.winterheim;
 
+import com.logan.winterheim.attachment.ModAttachments;
 import com.logan.winterheim.block.ModBlocks;
 import com.logan.winterheim.item.ModItems;
 import com.logan.winterheim.tab.ModCreativeTabs;
+import com.logan.winterheim.temperature.TemperatureEventHandler;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -23,10 +25,12 @@ public class WinterheimMod {
     public WinterheimMod(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(new TemperatureEventHandler());
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModAttachments.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

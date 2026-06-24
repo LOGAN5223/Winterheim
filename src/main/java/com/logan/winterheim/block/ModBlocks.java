@@ -19,6 +19,13 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
     );
 
+    public static final DeferredBlock<Block> HEATER_BLOCK = BLOCKS.registerBlock("heater_block",
+            HeaterBlock::new,
+            BlockBehaviour.Properties.of()
+                    .strength(2f)
+                    .lightLevel(state -> 15) // пример: свет от огня
+    );
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

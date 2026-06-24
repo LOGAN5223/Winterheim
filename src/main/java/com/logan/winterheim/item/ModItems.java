@@ -25,6 +25,12 @@ public class ModItems {
                 return new BlockItem(ModBlocks.FROZEN_BLOCK.get(), new Item.Properties().setId(itemKey));
             });
 
+    public static final DeferredItem<BlockItem> HEATER_BLOCK = ITEMS.register("heater_block",
+            key -> {
+                ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, key);
+                return new BlockItem(ModBlocks.HEATER_BLOCK.get(), new Item.Properties().setId(itemKey));
+            });
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
