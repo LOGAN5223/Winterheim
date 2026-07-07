@@ -2,6 +2,7 @@ package com.logan.winterheim;
 
 import com.logan.winterheim.attachment.ModAttachments;
 import com.logan.winterheim.block.ModBlocks;
+import com.logan.winterheim.effect.ModEffects;
 import com.logan.winterheim.item.ModItems;
 import com.logan.winterheim.tab.ModCreativeTabs;
 import com.logan.winterheim.temperature.TemperatureEventHandler;
@@ -31,6 +32,7 @@ public class WinterheimMod {
         ModItems.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
         ModAttachments.register(modEventBus);
+        ModEffects.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

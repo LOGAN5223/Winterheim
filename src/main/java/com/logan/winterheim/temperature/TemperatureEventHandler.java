@@ -2,6 +2,7 @@ package com.logan.winterheim.temperature;
 
 import com.logan.winterheim.attachment.ModAttachments;
 import com.logan.winterheim.block.HeaterBlock;
+import com.logan.winterheim.effect.ModEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -93,6 +94,12 @@ public class TemperatureEventHandler {
 
         float ambientCooling = -0.05f;
         float biomCooling = 1f;
+
+        if (player.hasEffect(ModEffects.WARMTH)) {
+            int amplifier = player.getEffect(ModEffects.WARMTH).getAmplifier() + 1; // 1, 2, 3...
+            // Каждый уровень эффекта добавляет +0.03 к дельте (можно настроить)
+            delta += 0.03f * amplifier;
+        }
 
         delta += ambientCooling * biomCooling;
 

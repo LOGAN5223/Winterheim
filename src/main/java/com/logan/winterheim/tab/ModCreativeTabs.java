@@ -23,6 +23,7 @@ public class ModCreativeTabs {
                     .icon(() -> new ItemStack(ModItems.FROZEN_SHARD.get()))
                     .displayItems((params, outputs) ->{
                         outputs.accept(ModItems.FROZEN_SHARD.get());
+                        outputs.accept(ModItems.JAGERMEISTER.get());
                         outputs.accept(ModBlocks.FROZEN_BLOCK.asItem());
                         outputs.accept(ModBlocks.HEATER_BLOCK.asItem());
                     })

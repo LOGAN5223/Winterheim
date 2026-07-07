@@ -4,6 +4,7 @@ import com.logan.winterheim.WinterheimMod;
 import com.logan.winterheim.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -30,6 +31,18 @@ public class ModItems {
                 ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, key);
                 return new BlockItem(ModBlocks.HEATER_BLOCK.get(), new Item.Properties().setId(itemKey));
             });
+    public static final DeferredItem<Item> JAGERMEISTER = ITEMS.register("jagermeister",
+            key -> new JagermeisterItem(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, key))
+                    .food(new FoodProperties.Builder()
+                            .nutrition(0)
+                            .saturationModifier(0.1f)
+                            .alwaysEdible()
+                            .build()
+                    )
+                    .stacksTo(1)
+            )
+    );
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

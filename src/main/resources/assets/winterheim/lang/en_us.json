@@ -7,5 +7,8 @@
   "item.winterheim.heater_block": "Heater Block",
   "block.winterheim.heater_block": "Heater Block",
 
-  "item.winterheim.frozen_shard": "Frozen Shard"
+  "item.winterheim.frozen_shard": "Frozen Shard",
+  "item.winterheim.jagermeister": "Jägermeister",
+
+  "effect.winterheim.warmth": "Warmth"
 }
